@@ -1,6 +1,6 @@
-#include <LiquidCrystal.h>       //調用Arduino自帶的LiquidCrystal庫
-#include <OneWire.h>      //調用Arduino單總線庫
-#include <DallasTemperature.h>  //調用ds18b20溫度傳感器庫
+#include <LiquidCrystal.h>       //呼叫Arduino IDE的LiquidCrystal function庫
+#include <OneWire.h>      //呼叫Arduino單總線庫
+#include <DallasTemperature.h>  //呼叫ds18b20溫度傳感器庫
 
 //#define ONE_WIRE_BUS 2    //設置單總線數據I/O口為2號引腳
 #define ONE_WIRE_BUS 7
@@ -32,14 +32,14 @@ void loop ()
   sensors.requestTemperatures();  //對傳感器進行一個溫度請求
   temperature=sensors.getTempCByIndex(0);  //讀取傳感器輸出的數據，以攝氏度為單位賦值給temperature變量。
   delay(100);
-  lcd.clear();          //清屏
-  lcd.print("ST:");   //使屏幕顯示文字
+  lcd.clear();          //清除螢幕文字
+  lcd.print("ST:");   //使螢幕顯示文字
   lcd.print( setTmp,1);  //顯示溫度小數點後一位
   lcd.print((char)223);      //顯示o符號
   lcd.print("C");      //顯示字母C
   
   lcd.setCursor(0, 1) ;
-  lcd.print("CT:");   //使屏幕顯示文字
+  lcd.print("CT:");   //使螢幕顯示文字
   lcd.print( temperature,1);  //顯示溫度小數點後一位
   lcd.print((char)223);      //顯示o符號
   lcd.print("C");      //顯示字母C
