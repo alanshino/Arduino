@@ -10,7 +10,7 @@ void loop()
 {
   unsigned long cm;
   pinMode(sig,OUTPUT);
-  cm=ping(sig);
+  cm=ping(sig);                               // 抓取距離
   Serial.print("distance=");
   Serial.print(cm);
   Serial.println("cm");

@@ -41,7 +41,7 @@ int num;
    long cm = ping(); 
    Serial.println(cm);
     
-   if (cm < 30) { 
+   if (cm < 30) {                         // 如果距離小於30cm 播放的音樂會改變
      digitalWrite(LED1, HIGH); 
      delay(cm*1.5 + 10); 
      digitalWrite(LED1, LOW); 
